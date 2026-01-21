@@ -1,0 +1,14 @@
+{% extends "blog/base.html" %}
+
+{% block title %}Inicio{% endblock %}
+
+{% block content %}
+<p>Bienvenido a mi blog en Django.</p>
+
+<ul>
+  <li><a href="{% url 'crear_autor' %}">Crear Autor</a></li>
+  <li><a href="{% url 'crear_categoria' %}">Crear Categoría</a></li>
+  <li><a href="{% url 'crear_post' %}">Crear Post</a></li>
+  <li><a href="{% url 'buscar_post' %}">Buscar Post</a></li>
+</ul>
+{% endblock %}
