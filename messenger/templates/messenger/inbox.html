@@ -1,0 +1,19 @@
+{% extends "blog/base.html" %}
+{% block content %}
+<h2>Inbox</h2>
+
+<p><a href="{% url 'send_message' %}">Enviar mensaje</a></p>
+
+<ul>
+  {% for m in mensajes %}
+    <li>
+      <a href="{% url 'message_detail' m.pk %}">
+        {{ m.subject }} - de {{ m.sender }}
+      </a>
+      {% if not m.is_read %} (nuevo) {% endif %}
+    </li>
+  {% empty %}
+    <p>No tenés mensajes.</p>
+  {% endfor %}
+</ul>
+{% endblock %}

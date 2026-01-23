@@ -1,0 +1,13 @@
+{% extends "blog/base.html" %}
+{% block title %}Borrar{% endblock %}
+
+{% block content %}
+<h2>¿Seguro que querés borrar "{{ object.titulo }}"?</h2>
+
+<form method="post">
+  {% csrf_token %}
+  <button type="submit">Sí, borrar</button>
+</form>
+
+<p><a href="{% url 'pages_list' %}">Cancelar</a></p>
+{% endblock %}

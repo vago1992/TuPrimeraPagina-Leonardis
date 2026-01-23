@@ -1,0 +1,17 @@
+{% extends "blog/base.html" %}
+{% block title %}{{ post.titulo }}{% endblock %}
+
+{% block content %}
+<h2>{{ post.titulo }}</h2>
+<h4>{{ post.subtitulo }}</h4>
+
+{% if post.imagen %}
+  <img src="{{ post.imagen.url }}" alt="{{ post.titulo }}" style="max-width:400px;">
+{% endif %}
+
+<div>
+  {{ post.contenido|safe }}
+</div>
+
+<p><a href="{% url 'pages_list' %}">Volver</a></p>
+{% endblock %}

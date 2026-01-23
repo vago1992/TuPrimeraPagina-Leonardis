@@ -1,0 +1,14 @@
+{% extends "blog/base.html" %}
+{% block title %}Formulario{% endblock %}
+
+{% block content %}
+<h2>Formulario</h2>
+
+<form method="post" enctype="multipart/form-data">
+  {% csrf_token %}
+  {{ form.as_p }}
+  <button type="submit">Guardar</button>
+</form>
+
+<p><a href="{% url 'pages_list' %}">Volver</a></p>
+{% endblock %}
